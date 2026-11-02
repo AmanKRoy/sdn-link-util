@@ -32,4 +32,4 @@ ONOS takes 2-5 minutes to start the first time; the script waits for it. Needs D
 - Static ARP is set on the hosts (`net.staticArp()`), so no ARP flows are needed. Only IPv4 rules are installed.
 - ONOS port stats refresh in bursts. The monitor uses a 10 s rolling window, so the rate is smooth and a reroute happens about 15 s after load starts.
 - Constants: `CAP_MBPS` (10), `LOAD_MBPS` (9), `DURATION` (40) in `topo_demo.py`; threshold 0.8, window 10 s, 3 consecutive polls in `monitor()` in `reroute.py`.
-- `run.sh` uses sudo for Docker (user not in the docker group).
+- `run.sh` runs Docker through sudo when the user is not in the docker group. sudo asks for the password in the terminal; no password is stored in the repo.
